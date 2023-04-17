@@ -1,7 +1,3 @@
-/*
- * Edit the functions by changing var with cost and let
- */
-
 export function taskFirst() {
   const task = 'I prefer const when I can.';
   return task;
