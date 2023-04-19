@@ -12,19 +12,19 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   };
   try {
     const signupUser = await signUpUser(firstName, lastName);
-    user.status = 'fulfilled';
-    user.value = signupUser;
+    user_promise.status = 'fulfilled';
+    user_promise.value = signupUser;
   } catch (error) {
-    user.status = 'rejected';
-    user.value = error.toString();
+    user_promise.status = 'rejected';
+    user_promise.value = error.toString();
   }
   try {
     const uploadPhoto = await uploadPhoto(fileName);
-    photo.status = 'fulfilled';
-    photo.value = uploadPhoto;
+    photo_promise.status = 'fulfilled';
+    photo_promise.value = uploadPhoto;
   } catch (error) {
-    photo.status = 'rejected';
-    photo.value = error.toString();
+    photo_promise.status = 'rejected';
+    photo_promise.value = error.toString();
   }
   return [user_promise, photo_promise];
 }
