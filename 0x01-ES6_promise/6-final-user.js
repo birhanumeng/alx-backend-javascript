@@ -24,7 +24,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     photo.value = upload;
   } catch (err) {
     photo.status = 'rejected';
-    photo = err.toString();
+    photo.value = err.toString();
   }
 
   return [user, photo];
