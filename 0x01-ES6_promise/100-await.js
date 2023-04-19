@@ -13,7 +13,7 @@ export default async function asyncUploadUser() {
   }
   const result = {
     photo: photoObj,
-    user: userObj
+    user: userObj,
   };
 
   return result;
