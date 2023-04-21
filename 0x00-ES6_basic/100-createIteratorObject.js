@@ -1,5 +1,5 @@
 export default function createIteratorObject(report) {
-  let interable = [];
+  const interator = [];
 
   if (!report.allEmployees || typeof report.allEmployees !== 'object') {
 		return iterator;
