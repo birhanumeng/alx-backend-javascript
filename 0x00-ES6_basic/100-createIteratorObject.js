@@ -1,4 +1,9 @@
 export default function createIteratorObject(report) {
+  
+  if (!report.allEmployees || typeof report.allEmployees !== 'object') {
+		{done: true, value: undefined};
+	}
+
   const iterator = {
     [Symbol.iterator]() {
       return {
