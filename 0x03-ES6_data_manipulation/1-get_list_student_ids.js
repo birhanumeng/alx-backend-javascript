@@ -1,5 +1,5 @@
 export default getListStudentIds(students) {
-  if(!(sudents instanceOf Array)) {
+  if(!Array.isArray(students)) {
     return [];
   }
 
