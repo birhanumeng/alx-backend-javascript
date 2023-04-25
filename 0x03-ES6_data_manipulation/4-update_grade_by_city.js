@@ -12,6 +12,7 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
     const gradeFilter = newGrades.filter(
       (newGrade) => newGrade.studentId === student.id,);
 
+
     let grade;
 
     if (gradeFilter[0]) {
@@ -20,7 +21,7 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
       grade = 'N/A';
     }
 
-    return { ...student, grade, };
+    return { ...student, grade };
   });
 
   return studentsGraded;
