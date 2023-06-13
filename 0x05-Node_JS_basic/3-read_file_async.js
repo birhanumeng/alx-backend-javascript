@@ -1,27 +1,24 @@
 const fs = require('fs');
 
-function countStudents(path) {
+function countStudents(file) {
   return new Promise((resolve, reject) => {
-    fs.readFile(path, 'utf8', (err, data) => {
+    fs.readFile(file, 'utf8', (err, data) => {
       if (err) {
         reject(Error('Cannot load the database'));
         return;
       }
+      let message;
       const response = [];
-      let msg;
-
-      const content = data.toString().split('\n');
-
-      let students = content.filter((item) => item);
+      const file_content = data.toString().split('\n');
+      let students = file_content.filter((item) => item);
 
       students = students.map((item) => item.split(','));
 
       const NUMBER_OF_STUDENTS = students.length ? students.length - 1 : 0;
-      msg = `Number of students: ${NUMBER_OF_STUDENTS}`;
-      console.log(msg);
+      message = `Number of students: ${NUMBER_OF_STUDENTS}`;
+      console.log(message);
 
-      response.push(msg);
-
+      response.push(message);
       const fields = {};
       for (const i in students) {
         if (i !== 0) {
@@ -32,15 +29,13 @@ function countStudents(path) {
       }
 
       delete fields.field;
-
       for (const key of Object.keys(fields)) {
-        msg = `Number of students in ${key}: ${
+        message = `Number of students in ${key}: ${
           fields[key].length
         }. List: ${fields[key].join(', ')}`;
 
-        console.log(msg);
-
-        response.push(msg);
+        console.log(message);
+        response.push(message);
       }
       resolve(response);
     });
