@@ -1,14 +1,14 @@
-let message = 'Welcome to Holberton School, what is your name?\n';
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-process.stdout.write(message);
+process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', () => {
-  const data = process.stdin.read();
-  if (data !== null) {
-    process.stdout.write('Your name is:' + data.toString().trim());
+  const chunk = process.stdin.read();
+  if (chunk !== null) {
+    process.stdout.write(`Your name is: ${chunk}`);
   }
 });
 
 process.stdin.on('end', () => {
-  process.stdout.write('\nThis important software is now closing\n');
+  process.stdout.write('This important software is now closing\n');
 });
