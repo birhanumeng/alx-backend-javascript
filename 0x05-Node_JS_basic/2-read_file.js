@@ -9,7 +9,7 @@ function countStudents(file) {
   }
 
   data = data.toString().split('\n');
-  let students = content.filter((item) => item);
+  let students = data.filter((item) => item);
   students = students.map((item) => item.split(','));
   const NUMBER_OF_STUDENTS = students.length ? students.length - 1 : 0;
   console.log(`Number of students: ${NUMBER_OF_STUDENTS}`);
