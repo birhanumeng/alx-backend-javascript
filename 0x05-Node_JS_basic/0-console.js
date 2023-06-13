@@ -2,4 +2,4 @@ function displayMessage(message) {
   console.log(message);
 }
 
-module.exports = myFunction;
+module.exports = displayMessage;
