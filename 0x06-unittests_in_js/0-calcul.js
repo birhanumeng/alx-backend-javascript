@@ -7,4 +7,4 @@ function calculateNumber(a, b = 0) {
     return Math.round(num_a) + Math.round(num_b);
   }
 
-module.export = calculateNumber;
+module.exports = calculateNumber;
