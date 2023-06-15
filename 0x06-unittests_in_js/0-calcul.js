@@ -5,6 +5,6 @@ function calculateNumber(a, b = 0) {
     throw TypeError('Parameters must be numbers');
   
     return Math.round(num_a) + Math.round(num_b);
-  };
+  }
 
 module.export = calculateNumber;
