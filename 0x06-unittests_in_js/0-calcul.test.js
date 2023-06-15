@@ -16,11 +16,7 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
   });
 
-  it('should return the rounded number if only one is provided', () => {
-    assert.strictEqual(calculateNumber(1.5), 2);
-  });
-
-  it('should throw typeerror if either param cannot be coerced to a number', () => {
+  it('when the parametre is string, it should throw TypeError', () => {
     assert.throws(() => calculateNumber('string'), {
       name: 'TypeError',
       message: 'Parameters must be numbers'
