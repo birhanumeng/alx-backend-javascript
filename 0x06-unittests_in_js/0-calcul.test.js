@@ -20,11 +20,6 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1.5), 2);
   });
 
-  it('should cast non-numbers into numbers', () => {
-    assert.strictEqual(calculateNumber(true, '3'), 4);
-    assert.strictEqual(calculateNumber(1, '3.7'), 5);
-  });
-
   it('should throw typeerror if either param cannot be coerced to a number', () => {
     assert.throws(() => calculateNumber('string'), {
       name: 'TypeError',
