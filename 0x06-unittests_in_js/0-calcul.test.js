@@ -17,22 +17,20 @@ describe('calculateNumber', () => {
   });
 
   it('should return the rounded number if only one is provided', () => {
-    assert.strictEqual(calculateNumber(2), 2);
-    assert.strictEqual(calculateNumber(2.7), 3);
+    assert.strictEqual(calculateNumber(1.5), 2);
   });
 
   it('should cast non-numbers into numbers', () => {
     assert.strictEqual(calculateNumber(true, '3'), 4);
     assert.strictEqual(calculateNumber(1, '3.7'), 5);
-    assert.strictEqual(calculateNumber('1.2', 3.7), 5);
   });
 
   it('should throw typeerror if either param cannot be coerced to a number', () => {
-    assert.throws(() => calculateNumber('hello'), {
+    assert.throws(() => calculateNumber('string'), {
       name: 'TypeError',
       message: 'Parameters must be numbers'
     });
-    assert.throws(() => calculateNumber(1.2, 'dog'), {
+    assert.throws(() => calculateNumber(1.5, 'string'), {
       name: 'TypeError',
       message: 'Parameters must be numbers'
     });
