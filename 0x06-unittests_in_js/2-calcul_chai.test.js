@@ -3,38 +3,26 @@ const calculateNumber = require('./2-calcul_chai');
 
 describe('calculation', function () {
   describe('SUM', function () {
+    it('return 4', function () {
+      chai.expect(calculateNumber('SUM', 1, 3)).to.equal(4);
+    });
     it('return 5', function () {
-      chai.expect(calculateNumber('SUM', 1, 4)).to.equal(5);
+      chai.expect(calculateNumber('SUM', 1.3, 3)).to.equal(5);
     });
-    it('return 6', function () {
-      chai.expect(calculateNumber('SUM', 2.4, 4)).to.equal(6);
-    });
-    it('return 6', function () {
-      chai.expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
+    it('return 5', function () {
+      chai.expect(calculateNumber('SUM', 1.5, 3.3)).to.equal(5);
     });
   });
 
-  describe('SUBTRACT no round', function () {
-    it('should return 2', function () {
-      chai.expect(calculateNumber('SUBTRACT', 5, 3)).to.equal(2);
+  describe('SUBTRACT', function () {
+    it('return 1', function () {
+      chai.expect(calculateNumber('SUBTRACT', 5, 4)).to.equal(1);
     });
-  });
-
-  describe('SUBTRACT first round', function () {
-    it('should return -3', function () {
+    it('return -3', function () {
       chai.expect(calculateNumber('SUBTRACT', 2, 4.5)).to.equal(-3);
     });
-  });
-
-  describe('SUBTRACT second round', function () {
     it('should return 3', function () {
       chai.expect(calculateNumber('SUBTRACT', 4.5, 2)).to.equal(3);
-    });
-  });
-
-  describe('SUBTRACT both round', function () {
-    it('should return -4', function () {
-      chai.expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
     });
   });
 
