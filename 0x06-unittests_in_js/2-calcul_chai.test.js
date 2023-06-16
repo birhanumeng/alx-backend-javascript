@@ -14,15 +14,27 @@ describe('calculation', function () {
     });
   });
 
-  describe('SUBTRACT', function () {
-    it('return 1', function () {
-      chai.expect(calculateNumber('SUBTRACT', 5, 4)).to.equal(1);
+  describe('SUBTRACT no round', function () {
+    it('should return 2', function () {
+      chai.expect(calculateNumber('SUBTRACT', 5, 3)).to.equal(2);
     });
-    it('return -3', function () {
+  });
+
+  describe('SUBTRACT first round', function () {
+    it('should return -3', function () {
       chai.expect(calculateNumber('SUBTRACT', 2, 4.5)).to.equal(-3);
     });
+  });
+
+  describe('SUBTRACT second round', function () {
     it('should return 3', function () {
       chai.expect(calculateNumber('SUBTRACT', 4.5, 2)).to.equal(3);
+    });
+  });
+
+  describe('SUBTRACT both round', function () {
+    it('should return -4', function () {
+      chai.expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
     });
   });
 
